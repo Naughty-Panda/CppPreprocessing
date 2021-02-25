@@ -60,7 +60,9 @@ int main() {
 	Mylib::TEmployee* empl = new Mylib::TEmployee;
 	empl->ID = 1;
 	empl->salary = 12345.6f;
-	std::cout << "\nSize of employee struct = " << empl->GetSize() << std::endl;
+	std::cout << "\nSaving employee data to file:\n";
+	empl->SaveToFile();
+	std::cout << "Size of employee struct = " << empl->GetSize() << std::endl;
 
 	delete[] fArr;
 	delete StdArr;

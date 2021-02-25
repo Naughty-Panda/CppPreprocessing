@@ -1,6 +1,7 @@
 #pragma once
 
 #include <array>
+#include <string>
 
 #define ARR_SIZE 10
 #define FLOAT_SIGN_POS 31
@@ -15,12 +16,13 @@ namespace Mylib {
 #pragma pack(push, 1)
 	struct TEmployee {
 
-		char firstName[10];
-		char lastName[10];
-		int ID;
-		float salary;
+		std::string firstName = "temporary";
+		std::string lastName = "placeholder";
+		int ID = 0;
+		float salary = 0.0f;
 
 		int GetSize() { return sizeof(*this); }
+		bool SaveToFile();
 	};
 #pragma pack(pop)
 

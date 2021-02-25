@@ -2,6 +2,8 @@
 #include <array>
 #include <memory>
 #include <bit>
+#include <filesystem>
+#include <fstream>
 
 #include "mylib.h"
 
@@ -114,6 +116,30 @@ namespace Mylib {
 			nNegativeCount -= (std::bit_cast<int>(i) >> FLOAT_SIGN_POS);
 
 		return nNegativeCount;
+	}
+
+	bool TEmployee::SaveToFile()
+	{
+		std::string sFilename("employee.txt");
+
+		if (std::filesystem::exists(sFilename)) {
+			std::filesystem::remove(sFilename);
+			std::cout << sFilename << " was removed.\n";
+		}
+
+		std::string sContent("");
+		sContent += "ID: " + std::to_string(this->ID);
+		sContent += "\nFirst name: " + this->firstName;
+		sContent += "\nLast name: " + this->lastName;
+		sContent += "\nSalary: " + std::to_string(this->salary);
+		sContent += "\n";
+
+		std::ofstream fout(sFilename);
+		std::cout << sFilename << " was successfully created.\n";
+		fout << sContent;
+		fout.close();
+
+		return true;
 	}
 
 }
