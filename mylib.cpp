@@ -30,13 +30,7 @@ namespace Mylib {
 	void PrintArray(const float* arr, const size_t& size) {
 		
 		if (!arr) return;
-
-		std::cout << "[ ";
-
-		for (size_t i = 0; i < size; i++) {
-			std::cout << arr[i] << " ";
-		}
-		std::cout << "]\n";
+		PRINT_ARRAY();
 	}
 
 	void PrintArray(const TArray* arr) {
@@ -52,13 +46,7 @@ namespace Mylib {
 	void PrintArray(const int* arr) {
 
 		if (!arr) return;
-
-		std::cout << "[ ";
-
-		for (size_t i = 0; i < ARR_SIZE; i++) {
-			std::cout << arr[i] << " ";
-		}
-		std::cout << "]\n";
+		PRINT_ARRAY();
 	}
 
 	//////////////////////////////////////////////////////////

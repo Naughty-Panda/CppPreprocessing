@@ -10,6 +10,7 @@
 #define TEST_INPUT(a, b) (((b) >= 0) ? ((a) >= 0 && (a) < (b) ? true : false) : ((a) <= 0 && (a) > (b) ? true : false))
 #define BOOL_TO_STR(a) ((a) ? "true" : "false")
 #define SWAP_INT(a, b) (a) = (a)^(b); (b) = (b)^(a); (a) = (a)^(b)
+#define PRINT_ARRAY() std::cout << "[ "; for (size_t i = 0; i < ARR_SIZE; i++) {std::cout << arr[i] << " ";} std::cout << "]\n"
 
 #define ARR_SIZE 10
 #define FLOAT_SIGN_POS 31
