@@ -1,6 +1,5 @@
 #include <iostream>
 #include <array>
-#include <memory>
 #include <bit>
 #include <filesystem>
 #include <fstream>
@@ -93,7 +92,7 @@ namespace Mylib {
 		return nNegativeCount;
 	}
 
-	//	This method is working up to 21% faster on my PC
+	//	These methods are working up to 21% faster on my PC (release builds)
 	int CountElemsBinary(const float* arr, const size_t& size) {
 
 		if (!arr) return -1;
@@ -118,6 +117,10 @@ namespace Mylib {
 		return nNegativeCount;
 	}
 
+	//////////////////////////////////////////////////////////
+	//	Struct functions
+	//////////////////////////////////////////////////////////
+
 	bool TEmployee::SaveToFile()
 	{
 		std::string sFilename("employee.txt");
@@ -141,5 +144,4 @@ namespace Mylib {
 
 		return true;
 	}
-
 }

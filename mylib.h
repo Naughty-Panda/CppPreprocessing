@@ -3,13 +3,23 @@
 #include <array>
 #include <string>
 
+//////////////////////////////////////////////////////////
+//	Macro
+//////////////////////////////////////////////////////////
+
 #define TEST_INPUT(a, b) (((b) >= 0) ? ((a) >= 0 && (a) < (b) ? true : false) : ((a) <= 0 && (a) > (b) ? true : false))
 #define BOOL_TO_STR(a) ((a) ? "true" : "false")
+#define SWAP_INT(a, b) (a) = (a)^(b); (b) = (b)^(a); (a) = (a)^(b)
 
 #define ARR_SIZE 10
 #define FLOAT_SIGN_POS 31
 
+
 namespace Mylib {
+
+	//////////////////////////////////////////////////////////
+	//	Structs
+	//////////////////////////////////////////////////////////
 
 	struct TArray {
 
@@ -56,5 +66,4 @@ namespace Mylib {
 
 	int CountElemsBinary(const float*, const size_t&);
 	int CountElemsBinary(const TArray*);
-
 }
