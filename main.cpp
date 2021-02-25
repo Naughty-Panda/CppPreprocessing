@@ -33,7 +33,6 @@ int main() {
 	std::cout << "\nC Array:\n";
 	Mylib::PrintArray(fArr, ARR_SIZE);
 
-	int nPosCount(0), nNegCount(0);
 	std::cout << "\nBranch function results:\n";
 	std::pair<int, int> PElemsCount = Mylib::CountElems(StdArr);
 	std::cout << "STL Array:\tpositive elements: " << PElemsCount.first << "; negative elements: " << PElemsCount.second << std::endl;
@@ -63,9 +62,10 @@ int main() {
 
 	std::cout << "Testing if ";
 	if (PInput.second >= 0)
-		std::cout << "0 => " << PInput.first << " < " << PInput.second << ": " << BOOL_TO_STR(TEST_INPUT(PInput.first, PInput.second));
+		std::cout << "0 => " << PInput.first << " < " << PInput.second << ": ";
 	else
-		std::cout << PInput.second << " > " << PInput.first << " <= 0: " << BOOL_TO_STR(TEST_INPUT(PInput.first, PInput.second));
+		std::cout << PInput.second << " > " << PInput.first << " <= 0: ";
+	std::cout << BOOL_TO_STR(TEST_INPUT(PInput.first, PInput.second));
 
 	//////////////////////////////////////////////////////////
 	//	7.3
