@@ -53,6 +53,7 @@ namespace Mylib {
 
 	void PrintArray(const float*, const size_t&);
 	void PrintArray(const TArray*);
+	void PrintArray(const int*);
 
 	//////////////////////////////////////////////////////////
 	//	Array operations
@@ -66,4 +67,7 @@ namespace Mylib {
 
 	int CountElemsBinary(const float*, const size_t&);
 	int CountElemsBinary(const TArray*);
+
+	bool _sorted(int*);
+	void SortArray(int*);
 }

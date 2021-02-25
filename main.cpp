@@ -68,13 +68,23 @@ int main() {
 		std::cout << PInput.second << " > " << PInput.first << " <= 0: " << BOOL_TO_STR(TEST_INPUT(PInput.first, PInput.second));
 
 	//////////////////////////////////////////////////////////
+	//	7.3
+	//////////////////////////////////////////////////////////
+
+	int userArr[ARR_SIZE]{ 1,-3,5,8,-7,3,3,2,-2,4 };
+	// TODO user input
+	std::cout << "\n\nSorting array:\n";
+	Mylib::SortArray(userArr);
+	std::cout << "Array sorted!\n";
+
+	//////////////////////////////////////////////////////////
 	//	7.4
 	//////////////////////////////////////////////////////////
 
 	Mylib::TEmployee* empl = new Mylib::TEmployee;
 	empl->ID = 1;
 	empl->salary = 12345.6f;
-	std::cout << "\n\nSaving employee data to file:\n";
+	std::cout << "\nSaving employee data to file:\n";
 	empl->SaveToFile();
 	std::cout << "Size of employee struct = " << empl->GetSize() << " bytes" << std::endl;
 

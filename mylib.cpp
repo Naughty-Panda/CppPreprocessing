@@ -49,6 +49,18 @@ namespace Mylib {
 		std::cout << "]\n";
 	}
 
+	void PrintArray(const int* arr) {
+
+		if (!arr) return;
+
+		std::cout << "[ ";
+
+		for (size_t i = 0; i < ARR_SIZE; i++) {
+			std::cout << arr[i] << " ";
+		}
+		std::cout << "]\n";
+	}
+
 	//////////////////////////////////////////////////////////
 	//	Array operations
 	//////////////////////////////////////////////////////////
@@ -115,6 +127,42 @@ namespace Mylib {
 			nNegativeCount -= (std::bit_cast<int>(i) >> FLOAT_SIGN_POS);
 
 		return nNegativeCount;
+	}
+
+	// TODO FIXES!
+	bool _sorted(int* arr) {
+
+		bool bSorted(false);
+		for (size_t curr = 0; curr < ARR_SIZE; curr++) {
+			for (size_t next = 1; next < ARR_SIZE - 1; next++) {
+				if (arr[curr] < arr[next]) bSorted = true;
+			}
+			bSorted = false;
+		}
+
+		return bSorted;
+	}
+
+	// TODO OPTIMIZATION!!!
+	void SortArray(int* arr) {
+
+		if (!arr) return;
+
+		bool bChanged(false);
+		do {
+			for (size_t curr = 0; curr < ARR_SIZE; curr++) {
+				for (size_t next = curr + 1; next < ARR_SIZE; next++) {
+					if (arr[curr] > arr[next]) {
+						SWAP_INT(arr[curr], arr[next]);
+						bChanged = true;
+					}
+				}
+				PrintArray(arr);
+			}
+			PrintArray(arr);
+			bChanged = false;
+
+		} while (bChanged);
 	}
 
 	//////////////////////////////////////////////////////////
