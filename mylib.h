@@ -3,6 +3,9 @@
 #include <array>
 #include <string>
 
+#define TEST_INPUT(a, b) (((b) >= 0) ? ((a) >= 0 && (a) < (b) ? true : false) : ((a) <= 0 && (a) > (b) ? true : false))
+#define BOOL_TO_STR(a) ((a) ? "true" : "false")
+
 #define ARR_SIZE 10
 #define FLOAT_SIGN_POS 31
 
