@@ -71,4 +71,6 @@ namespace Mylib {
 
 	bool _sorted(int*);
 	void SortArray(int*);
+
+	void GetInput(int*);
 }

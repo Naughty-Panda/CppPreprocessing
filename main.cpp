@@ -72,8 +72,9 @@ int main() {
 	//////////////////////////////////////////////////////////
 
 	int userArr[ARR_SIZE]{ 1,-3,5,8,-7,3,3,2,-2,4 };
-	// TODO user input
-	std::cout << "\n\nSorting array:\n";
+
+	Mylib::GetInput(userArr);
+	std::cout << "\nSorting array:\n";
 	Mylib::SortArray(userArr);
 	std::cout << "Array sorted!\n";
 

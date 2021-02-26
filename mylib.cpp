@@ -153,6 +153,30 @@ namespace Mylib {
 		} while (bChanged);
 	}
 
+	//	TODO: fix double digits outputs error message
+	void GetInput(int* arr) {
+
+		std::cout << "\n\nLet's fill array with 10 integers:\n";
+		int nCount(0), nInput(0);
+
+		while (nCount < ARR_SIZE) {
+
+			std::cout << "array[" << nCount << "] = ";
+			std::cin >> nInput;
+
+			if (std::cin.fail()) {
+				std::cout << "It's not gonna work. Please enter an integer!\n";
+				std::cin.clear();
+				std::cin.ignore(32767, '\n');
+			}
+			else {
+				arr[nCount++] = nInput;
+			}
+		}
+		std::cout << "\nArray filled!\n";
+		PrintArray(arr);
+	}
+
 	//////////////////////////////////////////////////////////
 	//	Struct functions
 	//////////////////////////////////////////////////////////
